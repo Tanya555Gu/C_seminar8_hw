@@ -48,14 +48,6 @@ int[] SumRow(int[,] array)
     return result;
 }
 
-void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        System.Console.WriteLine($"Сумма элементов на {i + 1} строке равна {array[i]}\t");
-    }
-}
-
 int FindMin(int[] array)
 {
     int min = array[0];
@@ -78,6 +70,4 @@ int minLimit = ReadInt("Минимальное случайное значени
 int maxLimit = ReadInt("Максимальное случайное значение");
 int[,] arr = Generate2DArray(rows, columns, minLimit, maxLimit);
 Print2DArray(arr);
-PrintArray(SumRow(arr));
-System.Console.WriteLine(FindMin(SumRow(arr)));
-// System.Console.WriteLine($"Наименьшая сумма элементов в строке {FindMin(SumRow(arr))}");
+System.Console.WriteLine($"Наименьшая сумма элементов на {FindMin(SumRow(arr))} строке");
